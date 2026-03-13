@@ -126,3 +126,14 @@ def update_task(task_id, title=None, description=None, status=None, priority=Non
         conn.commit()
 
     print(f"  ✏️  Task #{task_id} updated." if changes else f"  ❌ No task with ID #{task_id}")
+
+def delete_task(task_id):
+    with get_connection() as conn:
+        conn.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
+        changes = conn.total_changes
+        conn.commit()
+    print(f"  🗑️  Task #{task_id} deleted." if changes else f"  ❌ No task with ID #{task_id}")
+
+
+def complete_task(task_id):
+    update_task(task_id, status="completed")

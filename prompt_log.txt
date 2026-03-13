@@ -1,0 +1,14 @@
+I used ChatGPT to brainstorm features for the command-line interface app, as well as ask it to critique and update the columns of the database schema. Then I used Claude to create the main files for the app. I started with the SQL connection, then updated each CRUD operation along with the CLI instructions for users. 
+
+Some prompts: 
+
+I am trying to create a simple app using the SQLite database that supports all CRUD operations. I would like to make some sort of to-do list app, with simply a command line interface.  I have this database schema but please let me know if you think anything should be changed: 
+ColumnTypePurposeidINTEGER PRIMARY KEYunique task identifiertitleTEXTmain descriptiondescriptionTEXToptional detailsstatusTEXTpending / completedpriorityINTEGERoptional importancecreated_atDATETIMEwhen task was createddue_dateDATETIMEoptional deadline
+
+Do you have to type "python todo.py" each time before? If so, can we change this so that it will just take user input immediately?
+
+For the "read" part of CRUD, can you also add at least one way to filter or sort (for example, most pressing priorities at top)
+
+Can we add a confirmation like "Are you sure you want to delete task __?" before deleting
+
+How should I let users update their tasks? Like which part of the task do you think would make most sense to give the opportunity to change? 
